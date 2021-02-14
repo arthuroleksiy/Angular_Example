@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -57,7 +57,8 @@ namespace Students_Angular_App.Controllers
             try
             {
                 await _studentService.AddStudent(student);
-            }catch(Exception e)
+            }
+            catch(Exception e)
             {
                 throw new ApplicationException(e.Message);
             }

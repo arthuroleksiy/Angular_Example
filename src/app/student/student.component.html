@@ -1,0 +1,12 @@
+<form [formGroup] = "AddStudentForm" (ngSubmit) = "addStudent(AddStudentForm.value)">
+  <label>Name</label><input type="text" formControlName="name">
+  <label>Surname</label><input type="text" formControlName="surname">
+  <label>DateBirth</label><input type="date" formControlName="birthDate">
+  <button type="submit" class="button">Add student</button>
+</form>
+<ul>
+  <li *ngFor="let student of students; let i = index;">
+    {{i + 1}}. {{student.name}} {{student.surname}} {{student.birthDate | date}}
+    <input type="button" (click)="deleteStudent(student.studentId)" value="Delete student">
+  </li>
+</ul>
